@@ -13,8 +13,7 @@
   `MqttClient.MqttClient(#topic, listen.Process, (e) => Logger.LogDebug(e, true));`
 
 listen.process使用的函数：
-
-   `public class MQTT_listen
+   public class MQTT_listen
     {
         private MqttNet mqttNetClient;
         private string topic;
@@ -58,4 +57,4 @@ listen.process使用的函数：
            await mqttNetClient.MqttPublic(msg, topic, mqttNetClient.mqttClientProp, (e) => logger.LogDebug(e, true));//发布信息
         }
     }
-}`
+}
