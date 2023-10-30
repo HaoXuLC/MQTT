@@ -1,20 +1,19 @@
 # MQTTnetClient
 
-   #jsonString 是发送消息，#topic 是主题
+   `#jsonString 是发送消息，#topic 是主题`
 
    public MqttNet(string _userName,string _passWord,string _MqttServerIP) 需要账号密码，mqtt服务ip;
    
-   MqttServerClient方法使用-服务端使用的mqtt的函数，再收到应答后会进行关闭客户端的操作，主要流程就是连接，发送，关闭连接 ，返回收到的值;
+   MqttServerClient方法使用-服务端使用的mqtt的函数，再收到应答后会进行关闭客户端的操作，主要流程就是连接，发送，关闭连接 ，返回收到的值;  
      例子:`await Mqttclient.MqttServerClient(#jsonString,#topic,(e)=>_logger.LogDebug(e));`
    
-   MqttClient客户端使用的mqtt的函数，长连接的处理，适用于设备端进行应答反馈，不带发送的主题;
+   MqttClient客户端使用的mqtt的函数，长连接的处理，适用于设备端进行应答反馈，不带发送的主题;  
       例子:`MqttClient.MqttClient(#topic, listen.Process, (e) => Logger.LogDebug(e, true));`
    
-   MqttDisconnect 就是手动关闭客户端;
+   MqttDisconnect 就是手动关闭客户端;  
       例子:`await MqttClient.MqttDisconnect(MqttClient.mqttClientProp, (e) => Logger.LogDebug(e, true));`
    
-   MqttPublic 与 MqttClient 结合使用  收到信息后进行发布消息;
-   
+   MqttPublic 与 MqttClient 结合使用  收到信息后进行发布消息;     
   下面是使用例子：  
 外部调用的时候：
 //#topic是主题
