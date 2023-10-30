@@ -8,10 +8,12 @@
    MqttPublic 与 MqttClient 结合使用  收到信息后进行发布消息
    
   下面是使用例子：  
-外部调用的时候
-  MqttClient.MqttClient(InterfaceConfig.SN, listen.Process, (e) => Logger.LogDebug(e, true));
+外部调用的时候：
+//#topic是主题
+  MqttClient.MqttClient(#topic, listen.Process, (e) => Logger.LogDebug(e, true));
 
-listen.process使用的函数
+listen.process使用的函数：
+
    public class MQTT_listen
     {
         private MqttNet mqttNetClient;
